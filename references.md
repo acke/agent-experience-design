@@ -38,3 +38,16 @@ Original sources, grouped by what they support. A source marked *not read in ful
 - Zuplo, [The API readiness gap for agents](https://zuplo.com/learning-center/api-readiness-gap-agent-callable-apis).
 - API7, [Designing APIs for agentic CLIs](https://api7.ai/blog/designing-apis-for-agentic-clis).
 - PostHog, [Are agents really killing UI?](https://x.com/posthog/status/2086896332862886283) and [38 things we've learned building AI products](https://newsletter.posthog.com/p/38-things-weve-learned-about-building).
+
+## Review of agent-authored changes
+
+- Addy Osmani, Morgan Westlee Lunt and Qing Wang, [How the Claude Code team does code review](https://claude.dev/blog/solving-code-review-at-anthropic/). Risk tiers, approval rules, revert rate as guardrail.
+- Jovi De Croock, [Gittifacts](https://jovidecroock.com/blog/gittifacts/). Lanes from evidence, escalation rules, merge queue, per-change rollout. A design with a small trial.
+- Sarah Deitke, [Teaching engineers, trusting AI](https://www.infoq.com/presentations/duolingo-ai-literacy-code-review/), QCon London. Duolingo's PR risk assessment and auto-approval.
+- Chris Adams, Audris Mockus, Peter Rigby, Nachiappan Nagappan et al., [Automating low-risk code review at Meta](https://arxiv.org/abs/2605.30208), preprint. *Abstract only.*
+- Tyson Singer, [AI changed how Spotify builds](https://engineering.atspotify.com/2026/9/ai-changed-how-spotify-builds-what-we-learned-and-fixed-about-quality-at-higher-velocity). Change volume, automated maintenance, the dependency upgrade incident.
+- Ryan Skidmore, [Cutting our inference bill by 68%](https://blog.cloudflare.com/obsessive-inference-optimization). Cost of an AI code reviewer. Vendor-run.
+- Alberto Bacchelli and Christian Bird, [Expectations, outcomes, and challenges of modern code review](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/ICSE202013-codereview.pdf), ICSE 2013.
+- Purnang Borah, [Governed autonomous intelligence for mission-critical utility operations](https://infoq.com/articles/utility-governed-autonomous-intelligence-ai). Policy gate outside the model, action catalog, autonomy earned per action class. A design, no measured results.
+- Simon Lynch and Aaron Evans, [HCP Terraform is the control plane for AI-driven infrastructure](https://www.hashicorp.com/en/blog/hcp-terraform-is-the-control-plane-for-ai-driven-infrastructure). "The agent can propose. It should not decide." Vendor write-up.
+- Computer Sweden, [AI-agenter måste lära sig när det är nog](https://computersweden.se/article/4218645/ai-agenter-maste-lara-sig-nar-det-ar-nog.html), in Swedish. Allan Dabre (PwC) on confidence against authority.

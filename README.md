@@ -15,6 +15,7 @@ These are working notes, not a spec. Each claim links to its source. Benchmarks 
 | Keep output small | [principles/output-size.md](principles/output-size.md) |
 | Make writes safe to repeat | [principles/safe-mutations.md](principles/safe-mutations.md) |
 | Help agents find the tool and the next step | [principles/discovery-and-context.md](principles/discovery-and-context.md) |
+| Decide which agent-written changes can merge without a human | [principles/agent-authored-changes.md](principles/agent-authored-changes.md) |
 | Design a CLI | [cli/README.md](cli/README.md) |
 | Design an API | [api/README.md](api/README.md) |
 | Decide how MCP fits | [mcp/README.md](mcp/README.md) |

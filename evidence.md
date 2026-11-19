@@ -38,6 +38,24 @@ Ask which layer a "30 times cheaper" claim measured: transport, protocol or outp
 
 **TOON.** Reports about 40% fewer tokens than JSON. A retrieval benchmark and an independent generation test disagree on whether accuracy holds, so treat it as unproven.
 
+## Review of agent-authored changes
+
+All self-reported by the organisation running the process, on its own repositories. None has an independent replication. See [agent-authored-changes.md](principles/agent-authored-changes.md).
+
+**Meta, RADAR, arXiv preprint.** Over 535,000 diffs reviewed and over 331,000 landed. RADAR-reviewed diffs show a revert rate of about one third, and a production incident rate of about one fiftieth, of other diffs. Low-risk diffs land after deterministic validation. Known from the abstract only. The abstract's time-to-close figure doesn't add up as a percentage, so it is left out here.
+
+**Anthropic, Claude Code repositories.** From June to September, merged PRs more than doubled and the reverted share fell by more than 40%. The share of internal PRs with substantive review comments rose from 16% to 54%. Changes landing per day in the monorepo went from about 2,500 to over 30,000 between May and September. The revert figure is the guardrail. Incident numbers are not given.
+
+**Duolingo, conference talk.** About 300 engineers and about 200 PRs a day. Auto-approved PRs grew from about 0% to about 10% in roughly six months, and median time to merge fell from about 18 to about 12 hours. One or two auto-approved PRs a day are reverted. The speaker knows of no incident caused by one. Spoken estimates, not a study.
+
+**Spotify, engineering blog.** Merged changes went from about 8,100 to 17,000 a month, year over year. The vast majority of automated maintenance PRs merge automatically after safety checks. No share is given. One automated dependency upgrade passed every check and failed in production. Incidents reviewed so far found no material direct contribution from AI-authored code.
+
+**Gittifacts, one author, own repository.** Six agent-opened changes landed through the queue. Evidence took 13 to 17 minutes per change, and pre-existing test failures pushed every change into full review. A design with a small trial, not a production result.
+
+**Cloudflare, AI code reviewer cost.** Average cost per review fell from $2.43 to $0.77 and median latency from 4m 09s to 1m 32s. About two thirds of jobs are re-reviews, so skipping unchanged reviewers saves real money.
+
+**Bacchelli and Bird, Microsoft, 2013.** Of the review comments they classified, 78 (14%) concerned defects. Code improvements were the largest category at 29%. Predates agent-written code.
+
 ## What's missing
 
 - Independent replications of any benchmark above
