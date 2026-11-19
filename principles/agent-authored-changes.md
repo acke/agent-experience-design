@@ -21,6 +21,8 @@ Three lanes cover most changes. Lane 0 merges with no human reviewer, and the me
 | Routine metadata or config | Listed in advance as pre-approved | [Duolingo](https://www.infoq.com/presentations/duolingo-ai-literacy-code-review/) |
 | Automated maintenance and dependency upgrades | Safety checks pass, scheduled in the owning team's working hours, rollback ready | [Spotify](https://engineering.atspotify.com/2026/9/ai-changed-how-spotify-builds-what-we-learned-and-fixed-about-quality-at-higher-velocity) |
 | Small bug fix | Red/green proof: a test fails on the base and passes on the head | [Gittifacts](https://jovidecroock.com/blog/gittifacts/) |
+| Stale feature-flag or dead-code removal | Static analysis proves the code unreachable | No source. An inference from the rule that only proven, low-risk changes skip people |
+| Config and infrastructure inside approved modules | Policy as code passes, blast radius scoped to one project | [HashiCorp](https://www.hashicorp.com/en/blog/hcp-terraform-is-the-control-plane-for-ai-driven-infrastructure), [InfoQ](https://infoq.com/articles/utility-governed-autonomous-intelligence-ai) |
 | Reverts of merged changes | Opened automatically when errors rise | [Gittifacts](https://jovidecroock.com/blog/gittifacts/) |
 | Formatting, lint autofix, regenerated code | Output of a deterministic tool | No source. An inference from the rule that only proven, low-risk changes skip people |
 
@@ -63,11 +65,11 @@ No source defines "moderate" as a number. Pick a size limit and tune it against 
 
 | Guardrail | Why | Source |
 |---|---|---|
-| Track revert and incident rate per lane | The only check that the lanes are right. Merges more than doubled while the reverted share fell by more than 40% | [Anthropic](https://claude.dev/blog/solving-code-review-at-anthropic/) |
+| Track revert and incident rate per lane | The only check that the lanes are right. Merges more than doubled while the reverted share fell by more than 40%. Auto-reviewed diffs revert at about a third of the rate of other diffs | [Anthropic](https://claude.dev/blog/solving-code-review-at-anthropic/), [Meta](https://arxiv.org/abs/2605.30208) |
 | Make undo cheap | A feature flag per change, gradual rollout, automatic rollback on an error spike | [Gittifacts](https://jovidecroock.com/blog/gittifacts/), [Spotify](https://engineering.atspotify.com/2026/9/ai-changed-how-spotify-builds-what-we-learned-and-fixed-about-quality-at-higher-velocity) |
 | Schedule automated changes when owners are working | An automated dependency upgrade passed every check and failed in production | [Spotify](https://engineering.atspotify.com/2026/9/ai-changed-how-spotify-builds-what-we-learned-and-fixed-about-quality-at-higher-velocity) |
 | Let the merge queue re-run checks on main plus the change | Main only points at trees that passed | [Anthropic](https://claude.dev/blog/solving-code-review-at-anthropic/), [Gittifacts](https://jovidecroock.com/blog/gittifacts/) |
-| Watch knowledge transfer | Only 14% of review comments concern defects. The rest spread knowledge and team awareness, which auto-merge removes | [Bacchelli and Bird](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/ICSE202013-codereview.pdf) |
+| Watch knowledge transfer | Only 14% of review comments concern defects. The rest spread knowledge and team awareness, which auto-merge removes. Meta's RADAR team flags knowledge transfer as the cost that grows with automation | [Bacchelli and Bird](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/ICSE202013-codereview.pdf), [DX](https://newsletter.getdx.com/p/what-are-code-reviews-even-for) |
 | Fix repeated findings at the source | A lint rule, skill or agent instructions file, so the reviewer stops flagging the same thing | [Anthropic](https://claude.dev/blog/solving-code-review-at-anthropic/) |
 
 Measured results, and how far to trust them, are in [evidence.md](../evidence.md#review-of-agent-authored-changes).
