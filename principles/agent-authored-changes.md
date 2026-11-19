@@ -10,7 +10,7 @@ Three lanes cover most changes. Lane 0 merges with no human reviewer, and the me
 |---|---|---|
 | 0 | Agent only | Docs, routine config, maintenance bumps, proven fixes |
 | 1 | Agent plus one human, who can be the author | Additive API, ordinary product changes |
-| 2 | Agent plus one or two humans | Breaking API, auth, migrations, new dependencies, sensitive paths |
+| 2 | Agent plus two humans | Breaking API, auth, migrations, new dependencies, sensitive paths |
 
 ### Lane 0: auto-merge
 
@@ -40,12 +40,14 @@ No source defines "moderate" as a number. Pick a size limit and tune it against 
 
 ### Lane 2: full human review
 
+Two human reviewers. An agent's approval never fills a human slot. Two is a policy choice: [Anthropic](https://claude.dev/blog/solving-code-review-at-anthropic/) requires it for its highest-risk tier, and the other sources give no count.
+
 | Type | Condition | Source |
 |---|---|---|
 | Breaking API changes | API diff shows removals or changes | [Gittifacts](https://jovidecroock.com/blog/gittifacts/) |
 | Auth, permissions, migrations | Any change | [Gittifacts](https://jovidecroock.com/blog/gittifacts/), [Duolingo](https://www.infoq.com/presentations/duolingo-ai-literacy-code-review/) |
 | New dependencies | Dependency diff adds a package | [Gittifacts](https://jovidecroock.com/blog/gittifacts/) |
-| CI workflows and owner-listed sensitive paths | Always a human, two on the highest-risk paths | [Anthropic](https://claude.dev/blog/solving-code-review-at-anthropic/) |
+| CI workflows and owner-listed sensitive paths | Always human review | [Anthropic](https://claude.dev/blog/solving-code-review-at-anthropic/) |
 | Fix without proof, scope drift | No red/green evidence, or the diff exceeds the plan | [Gittifacts](https://jovidecroock.com/blog/gittifacts/) |
 | Diff too large to assess | Exceeds the classifier's token limit, marked undetermined | [Duolingo](https://www.infoq.com/presentations/duolingo-ai-literacy-code-review/) |
 | Author not on the trusted list | Any change | [Anthropic](https://claude.dev/blog/solving-code-review-at-anthropic/) |
